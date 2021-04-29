@@ -2,7 +2,7 @@ import tweepy
 import json
 import time
 import random
-from twitterCredentials import *
+from botCredentials import *
 
 auth = tweepy.OAuthHandler(API_KEY,  API_SECRET_KEY)
 
@@ -16,6 +16,8 @@ cumplidos = ["Guaperas", "Hermosura", "❤❤❤❤❤", "😍😍😍😍😍�
              "Vaya peinado más guay tienes", "Hola, somos de la Agencia Tributaria de Belleza. Venimos a cobrarle el impuesto de las grandes fortunas",
              "Si fuese camionero, te llevaría en mi camión. Pero como no lo soy, te llevo en mi corazón",  "Que tengas un buen día :)",
              "¡Buenas! Soy el bot medidor de las personas guapas. Según mis cálculos ¿usted tiene una belleza del 100%!"]
+
+# credit for this function to Thomas Ashish Cherian (https://github.com/PandaWhoCodes)
 
 
 def get_followers(user_name):

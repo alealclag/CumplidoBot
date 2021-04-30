@@ -56,7 +56,9 @@ def getRandomFriend(user):
         randomFriend]._json["screen_name"]
 
 
-lastMentionsID2 = api.mentions_timeline()[:5]
+for mention in api.mentions_timeline()[:5]:
+    mentionID = mention._json["id"]
+    lastMentionsID2.append(mentionID)
 
 while True:
     lastMentionsID = []

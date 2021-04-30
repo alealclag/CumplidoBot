@@ -34,7 +34,6 @@ def get_followers(user_name):
         try:
             followers.extend(page)
         except tweepy.TweepError as e:
-            print("Going to sleep:", e)
             time.sleep(60)
     return followers
 
@@ -47,7 +46,6 @@ def get_friends(user_name):
         try:
             friends.extend(page)
         except tweepy.TweepError as e:
-            print("Going to sleep:", e)
             time.sleep(60)
     return friends
 
@@ -73,7 +71,6 @@ while True:
         if mentionID not in lastMentionsID2:
 
             textMentionWords = mention._json["text"].split(" ")
-            print(textMentionWords)
 
             for palabra in textMentionWords:
                 if palabra[0] == "@" and palabra != "@CumplidoBot":
@@ -85,7 +82,7 @@ while True:
                     mention._json["user"]["screen_name"])
                 randomCommpliment = cumplidos[random.randint(
                     0, len(cumplidos)-1)]
-                print("{}, 1".format(friendName))
+
                 try:
                     api.update_status(
                         "@{} {}".format(friendName, randomCommpliment))
@@ -96,7 +93,7 @@ while True:
                 for user in mentionedUsers:
                     randomCommpliment = cumplidos[random.randint(
                         0, len(cumplidos)-1)]
-                    print("{}, 2".format(user))
+
                     try:
                         api.update_status("{} {}".format(
                             user, randomCommpliment))

@@ -1,12 +1,13 @@
 import tweepy
 import time
 import random
+import os
 
 from tweepy.error import TweepError
 from botCredentials import *
 from cumplidos import *
 
-auth = tweepy.OAuthHandler(API_KEY,  API_SECRET_KEY)
+auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
 
 auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET_TOKEN)
 

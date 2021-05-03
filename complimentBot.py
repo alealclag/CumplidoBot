@@ -1,7 +1,6 @@
 import tweepy
 import time
 import random
-import os
 
 from tweepy.error import TweepError
 from botCredentials import *

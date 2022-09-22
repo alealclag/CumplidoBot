@@ -4,8 +4,8 @@ services:
   cumplidoBot:
     image: alcinco/cumplidobot
     environment:
-       - ACCESS_SECRET_TOKEN = #Here goes your access secret token
-       - ACCESS_TOKEN = #Here goes your access token
-       - API_KEY = #Here goes your api key
-       - API_SECRET_KEY = #Here goes your api secret key
+       - ACCESS_SECRET_TOKEN=bhzJr9qTYjbNUDJwM0sP8JeBZWmB2XCJBS2Q4U6NOXJpB
+       - ACCESS_TOKEN=1143187584061005824-wt1cwc5KRAHNrRXh7MyotIXPFTuKs5
+       - API_KEY=XT155hldYz5i27PfogqGMM8Yo
+       - API_SECRET_KEY=jj8WDScGBiK1NNz3Bbsm33k9VLcKncL7kUQidjqedaiZ49V21M
     restart: always

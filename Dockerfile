@@ -1,7 +1,7 @@
-FROM python:buster
+FROM python:2.7.15-slim-jessie
 WORKDIR /app
 COPY . .
-RUN pip install tweepy
+RUN pip install --user tweepy
 
 
 CMD ["python", "/app/complimentBot.py"]

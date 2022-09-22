@@ -62,7 +62,7 @@ def postCompliment(user):
             0, len(cumplidos)-1)]
         try:
             api.update_status(
-                "@{} {}".format(user, randomCommpliment))
+                "@{} {}".format(user, randomCommpliment));print("Complimented someone")
         except TweepError:
             pass
 
@@ -71,9 +71,10 @@ def postCompliment(user):
             0, len(pics)-1)]
         try:
             api.update_with_media(filename=randomPic,
-                                  status="@{}".format(user))
+                                  status="@{}".format(user));print("Complimented someone")
         except TweepError:
             pass
+    
 
 
 for mention in api.mentions_timeline()[:10]:
@@ -95,7 +96,7 @@ while True:
 
         if mentionID not in lastMentionsID2:
 
-            textMentionWords = mention._json["text"].split(" ")
+            textMentionWords = filter(lambda a: a != '' , mention._json["text"].split(" "))
 
             for palabra in textMentionWords:
                 if palabra[0] == "@" and palabra != "@CumplidoBot":

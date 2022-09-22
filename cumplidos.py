@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #32
 cumplidos = ["Guaperas", "Hermosura", "❤❤❤❤❤", "😍😍😍😍😍😍😍😍😍", "🥵🥵🥵🥵🥵🥵🥵🥵🥵", "😳😳😳😳😳😳😳", "Bellesón", "No te pongas al sol, quel los bombones se derriten",
              "Vaya, no sabía que había gente tan hermosa en Twitter", "Por ti, mi corazón palpita, como una patata frita", "La verdad que te quedan muy bien los sombreros", "Damn u really hot",

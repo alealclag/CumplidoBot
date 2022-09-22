@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import tweepy
 import time
 import random
@@ -78,6 +79,8 @@ def postCompliment(user):
 for mention in api.mentions_timeline()[:10]:
     mentionID = mention._json["id"]
     lastMentionsID2.append(mentionID)
+
+print("Ready to compliment!")
 
 while True:
     lastMentionsID = []

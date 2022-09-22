@@ -1,0 +1,6 @@
+version: "3.6"
+
+services:
+  presentationSite-front:
+    image: alcinco/cumplidobot
+    restart: always

@@ -3,8 +3,9 @@ version: "3.6"
 services:
   cumplidoBot:
     image: alcinco/cumplidobot
+    
+    # Put your credentials here
     environment:
-	#Put your credentials here
        - ACCESS_SECRET_TOKEN= 
        - ACCESS_TOKEN=
        - API_KEY=

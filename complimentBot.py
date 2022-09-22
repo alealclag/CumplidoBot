@@ -46,13 +46,20 @@ def get_friends(user_name):
     return friends
 
 def getMutuals(user):
-    return list(set(get_followers(user)) & set(get_friends(user)))   
+    followersUsernames=[]
+    for follower in get_followers(user):
+	followersUsernames.append(follower._json["screen_name"])
+    friendsUsernames=[]
+    for friend in get_friends(user):
+	friendsUsernames.append(friend._json["screen_name"])
+    
+    return list(set(followersUsernames) & set(friendsUsernames))   
 
 
 def getRandomMutual(user):
-    userMutuals = getMutuals(user)
+    userMutuals = getMutuals(user);
     randomMutual = random.randint(0, len(userMutuals)-1)
-    return userMutuals[randomMutual]._json["screen_name"]
+    return userMutuals[randomMutual]
 
 
 def postCompliment(user):
@@ -64,7 +71,7 @@ def postCompliment(user):
             0, len(cumplidos)-1)]
         try:
             api.update_status(
-                "@{} {}".format(user, randomCommpliment));print("Complimented someone")
+                "@{} {}".format(user, randomCommpliment));print("Complimented " + user)
         except TweepError:
             pass
 
@@ -73,7 +80,7 @@ def postCompliment(user):
             0, len(pics)-1)]
         try:
             api.update_with_media(filename=randomPic,
-                                  status="@{}".format(user));print("Complimented someone")
+                                  status="@{}".format(user));print("Complimented " + user)
         except TweepError:
             pass
     
@@ -120,4 +127,4 @@ while True:
 
     lastMentionsID2 = lastMentionsID
 
-    time.sleep(60)
+    time.sleep(10)

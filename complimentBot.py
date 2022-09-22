@@ -127,4 +127,4 @@ while True:
 
     lastMentionsID2 = lastMentionsID
 
-    time.sleep(10)
+    time.sleep(60)

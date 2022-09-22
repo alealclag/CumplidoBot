@@ -45,12 +45,14 @@ def get_friends(user_name):
             time.sleep(60)
     return friends
 
+def getMutuals(user):
+    return list(set(get_followers(user)) & set(get_friends(user)))   
 
-def getRandomFriend(user):
-    numFriends = len(get_friends(user))
-    randomFriend = random.randint(0, numFriends-1)
-    return get_friends(user)[
-        randomFriend]._json["screen_name"]
+
+def getRandomMutual(user):
+    userMutuals = getMutuals(user)
+    randomMutual = random.randint(0, len(userMutuals)-1)
+    return userMutuals[randomMutual]._json["screen_name"]
 
 
 def postCompliment(user):
@@ -105,10 +107,10 @@ while True:
                     userCont += 1
 
             if userCont == 0:
-                friendName = getRandomFriend(
+                mutualName = getRandomMutual(
                     mention._json["user"]["screen_name"])
 
-                postCompliment(friendName)
+                postCompliment(mutualName)
 
             elif userCont > 0:
                 for user in mentionedUsers:

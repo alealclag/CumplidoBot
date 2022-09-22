@@ -1,6 +1,11 @@
 version: "3.6"
 
 services:
-  presentationSite-front:
+  cumplidoBot:
     image: alcinco/cumplidobot
+    environment:
+       - ACCESS_SECRET_TOKEN = #Here goes your access secret token
+       - ACCESS_TOKEN = #Here goes your access token
+       - API_KEY = #Here goes your api key
+       - API_SECRET_KEY = #Here goes your api secret key
     restart: always
